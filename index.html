@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑妞建盏茶器</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Noto Serif TC","Microsoft JhengHei",serif;
+  background:radial-gradient(circle at top,#171008,#050505 58%,#000);
+  color:#f3e6cf;
+}
+
+.page{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* ===== 品牌 ===== */
+.brand-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+
+.brand-avatar{
+  width:82px;
+  height:82px;
+  object-fit:cover;
+  border-radius:18px;
+  border:2px solid rgba(202,168,108,0.6);
+  box-shadow:0 0 20px rgba(202,168,108,0.35);
+}
+
+.brand-text{
+  font-size:54px;
+  letter-spacing:6px;
+  color:#e8ceb0;
+  text-shadow:0 0 24px rgba(232,206,176,0.25);
+  font-weight:700;
+}
+
+.category{
+  font-size:18px;
+  letter-spacing:16px;
+  color:#caa86c;
+  margin-top:10px;
+}
+
+/* ===== 按钮 ===== */
+.btn-group{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  margin:30px auto;
+  max-width:760px;
+}
+
+.btn-wrap{
+  flex:1;
+}
+
+.line-btn,.wechat-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  height:72px;
+  border-radius:40px;
+  font-size:28px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.line-btn{
+  background:linear-gradient(135deg,#26d72c,#049818);
+  color:#fff;
+  border:2px solid rgba(200,255,200,.72);
+  box-shadow:0 0 26px rgba(45,255,55,.35),
+             0 14px 40px rgba(30,160,30,.35);
+}
+
+.wechat-btn{
+  background:linear-gradient(135deg,#9be65a,#4caf32);
+  color:#fff;
+  border:2px solid rgba(230,255,190,.82);
+  box-shadow:0 0 24px rgba(150,255,90,.25),
+             0 14px 40px rgba(70,180,60,.25);
+  cursor:pointer;
+}
+
+.line-btn:hover,.wechat-btn:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.pointer{
+  font-size:24px;
+}
+
+.logo-circle{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#0aaa21;
+  font-size:14px;
+  font-weight:900;
+}
+
+.wechat-icon{
+  width:46px;
+  height:46px;
+  position:relative;
+}
+
+.wechat-icon:before,
+.wechat-icon:after{
+  content:"";
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+}
+
+.wechat-icon:before{
+  width:30px;height:24px;left:2px;top:10px;
+}
+.wechat-icon:after{
+  width:24px;height:20px;right:2px;bottom:8px;
+}
+
+.btn-sub{
+  margin-top:10px;
+  color:#d7aa5c;
+  font-size:14px;
+}
+
+/* ===== 文案 ===== */
+.intro{
+  margin:30px 0 50px;
+  font-size:18px;
+  line-height:2;
+  color:#e3c79f;
+}
+
+/* ===== 卖点（已升级图二效果）===== */
+.features{
+  max-width:980px;
+  margin:0 auto;
+  padding:42px 34px;
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(38,25,11,.92),rgba(12,9,6,.98));
+  border:1px solid rgba(193,151,96,.34);
+  box-shadow:0 24px 70px rgba(0,0,0,.42);
+}
+
+.features h2{
+  font-size:34px;
+  margin:0 0 36px;
+  color:#e3c79f;
+  letter-spacing:4px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.feature{
+  padding:20px 24px;
+  border-right:1px solid rgba(193,151,96,.28);
+}
+
+.feature:last-child{
+  border-right:none;
+}
+
+.icon{
+  width:70px;
+  height:70px;
+  border:1.5px solid #caa86c;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:16px;
+  color:#e3c79f;
+  font-size:32px;
+}
+
+.feature strong{
+  display:block;
+  margin-bottom:10px;
+  color:#ead2ae;
+  font-size:20px;
+}
+
+.feature span{
+  font-size:16px;
+  color:#e8d7b8;
+  line-height:1.8;
+}
+
+.note{
+  margin-top:28px;
+  font-size:16px;
+  color:#d7aa5c;
+}
+
+/* ===== 微信弹窗 ===== */
+.qr-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+}
+
+.qr-box{
+  background:#111;
+  padding:30px;
+  border-radius:20px;
+}
+
+.close{
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* 手机 */
+@media(max-width:700px){
+  .brand-text{font-size:36px;}
+  .brand-avatar{width:64px;height:64px;}
+  .btn-group{flex-direction:column;}
+  .feature-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- 品牌 -->
+  <div class="brand-row">
+    <img src="girl.jpg" class="brand-avatar">
+    <div class="brand-text">黑妞建盏茶器</div>
+  </div>
+
+  <div class="category">建 盞</div>
+
+  <!-- 按钮 -->
+  <div class="btn-group">
+
+    <div class="btn-wrap">
+      <a class="line-btn" href="https://line.me/ti/p/~heiniu6666">
+        <span class="pointer">👉</span>
+        <span class="logo-circle">LINE</span>
+        LINE
+      </a>
+      <div class="btn-sub">添加客服 LINE</div>
+    </div>
+
+    <div class="btn-wrap">
+      <div class="wechat-btn" onclick="openWechat()">
+        <span class="pointer">👉</span>
+        <span class="wechat-icon"></span>
+        WeChat
+      </div>
+      <div class="btn-sub">添加客服 WeChat</div>
+    </div>
+
+  </div>
+
+  <!-- 文案 -->
+  <div class="intro">
+    傳承千年匠心，專注建盞之美。<br>
+    每一只建盞，都是獨一無二的自然之作。
+  </div>
+
+  <!-- 卖点 -->
+  <div class="features">
+    <h2>建盞之美</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="icon">火</div>
+        <strong>古法燒制</strong>
+        <span>傳統拉坯燒制<br>千年技藝傳承</span>
+      </div>
+
+      <div class="feature">
+        <div class="icon">變</div>
+        <strong>自然窯變</strong>
+        <span>窯火自然變化<br>每一只皆獨特</span>
+      </div>
+
+      <div class="feature">
+        <div class="icon">品</div>
+        <strong>匠心品質</strong>
+        <span>嚴格把控品質<br>只為一盞好盞</span>
+      </div>
+
+      <div class="feature">
+        <div class="icon">藏</div>
+        <strong>收藏佳品</strong>
+        <span>實用與收藏兼具<br>越用越有韻味</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">现货有限｜每只建盏皆为唯一</div>
+
+</div>
+
+<!-- 微信 -->
+<div class="qr-modal" id="qrModal">
+  <div class="qr-box">
+    <img src="wechat-qr.jpg" width="200">
+    <div>长按识别二维码添加</div>
+    <div>微信ID：lan223932413</div>
+    <div class="close" onclick="closeQR()">关闭</div>
+  </div>
+</div>
+
+<script>
+function openWechat(){
+  navigator.clipboard.writeText("lan223932413");
+  document.getElementById("qrModal").style.display="flex";
+}
+function closeQR(){
+  document.getElementById("qrModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
